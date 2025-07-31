@@ -1,11 +1,13 @@
 <script lang="ts">
-    let search: string = $state("");
-    let mangas: Array<string> = $state([]);
+    let { search, mangas }: { search: string; mangas: Array<string> } =
+        $props();
 
     function add(e: Event) {
         e.preventDefault();
-        mangas.push(search);
-        search = "";
+        if (can_add()) {
+            mangas.push(search);
+            search = "";
+        }
     }
 
     function can_add() {
