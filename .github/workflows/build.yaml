@@ -1,0 +1,26 @@
+---
+on:
+  push:
+    branches:
+      - "main"
+name: build
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Setup bunjs
+        uses: oven-sh/setup-bun@v2
+      - name: Instal js deps
+        run: bun install
+      - name: Run svelte check
+        run: bun run check
+      - name: Build app
+        run: bun run build
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: mtrack
+          path: dist
