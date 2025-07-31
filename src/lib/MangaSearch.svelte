@@ -10,7 +10,10 @@
     }
 
     function can_add() {
-        return $search.length > 0 && !$mangas.includes($search);
+        return (
+            $search.length > 0 &&
+            !$mangas.map((x) => x.toLowerCase()).includes($search.toLowerCase())
+        );
     }
 </script>
 
