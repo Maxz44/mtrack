@@ -18,7 +18,11 @@
 </script>
 
 <form onsubmit={add}>
-    <input placeholder="Search your manga" bind:value={$search} />
+    <input
+        autocapitalize="on"
+        placeholder="Search your manga"
+        bind:value={$search}
+    />
     {#if can_add()}
         <button class="full">Add</button>
     {/if}
