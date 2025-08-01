@@ -4,15 +4,18 @@
     function add(e: Event) {
         e.preventDefault();
         if (can_add()) {
-            mangas.update((n) => n.concat([$search]));
+            mangas.update((n) => n.set($search, []));
             search.set("");
         }
     }
 
     function can_add() {
+        let manga_names = Array.from($mangas.keys());
         return (
             $search.length > 0 &&
-            !$mangas.map((x) => x.toLowerCase()).includes($search.toLowerCase())
+            !manga_names
+                .map((x) => x.toLowerCase())
+                .includes($search.toLowerCase())
         );
     }
 </script>

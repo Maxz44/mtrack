@@ -1,9 +1,11 @@
 <script lang="ts">
     import { search, mangas } from "../store";
+
+    let mangas_name = $derived(Array.from($mangas.keys()));
 </script>
 
 <div class="flex two">
-    {#each $mangas as manga}
+    {#each mangas_name as manga}
         {#if $search == "" || manga
                 .toLowerCase()
                 .includes($search.toLowerCase())}
