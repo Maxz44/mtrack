@@ -1,7 +1,7 @@
 <script lang="ts">
     import { search, mangas } from "../store";
 
-    let mangas_name = $derived(Array.from($mangas.keys()));
+    let mangas_name: string[] = $derived(Array.from($mangas.keys()));
 </script>
 
 <div class="flex two">
@@ -9,11 +9,11 @@
         {#if $search == "" || manga
                 .toLowerCase()
                 .includes($search.toLowerCase())}
-            <article class="card">
-                <header>
+            <span>
+                <button class="full">
                     <h3>{manga}</h3>
-                </header>
-            </article>
+                </button>
+            </span>
         {/if}
     {/each}
 </div>
