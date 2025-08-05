@@ -24,3 +24,4 @@ jobs:
         with:
           name: mtrack
           path: dist
+          retention-days: 1

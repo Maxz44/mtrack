@@ -9,7 +9,7 @@
         }
     }
 
-    function can_add() {
+    function can_add(): Boolean {
         let manga_names = Array.from($mangas.keys());
         return (
             $search.length > 0 &&
@@ -26,9 +26,7 @@
         placeholder="Search your manga"
         bind:value={$search}
     />
-    {#if can_add()}
-        <button class="full">Add</button>
-    {/if}
+    <button class="full success" disabled={!can_add()}>Create</button>
 </form>
 
 <style></style>

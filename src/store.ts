@@ -10,6 +10,7 @@ export let search: Writable<string> = writable("");
 export let mangas: Writable<Map<string, number[]>> = writable(mangas_saved);
 
 // Update data in local storage
+// Map are not jsonable but entries are
 mangas.subscribe((val) => {
   localStorage.mangas = JSON.stringify(Array.from(val.entries()));
 });
