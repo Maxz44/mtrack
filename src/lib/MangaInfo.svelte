@@ -2,7 +2,7 @@
     import { match, goto } from "elegua";
     import { mangas } from "../store";
 
-    let manga_name = decodeURI($match[1]);
+    let manga_name = decodeURI($match && $match.length > 1 ? $match[1] : "");
 
     function delete_manga(e: Event) {
         e.preventDefault();
