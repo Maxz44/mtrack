@@ -10,9 +10,9 @@
                 .toLowerCase()
                 .includes($search.toLowerCase())}
             <span>
-                <button class="full">
+                <a class="button full" href="/manga/{manga}">
                     <h3>{manga}</h3>
-                </button>
+                </a>
             </span>
         {/if}
     {/each}
