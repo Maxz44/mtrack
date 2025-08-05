@@ -1,6 +1,8 @@
 <script lang="ts">
     import { search, mangas } from "../store";
 
+    $search = "";
+
     function add(e: Event) {
         e.preventDefault();
         if (can_add()) {
